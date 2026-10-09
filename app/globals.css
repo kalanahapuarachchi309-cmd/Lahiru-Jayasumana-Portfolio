@@ -14,13 +14,97 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #080107;
-  background: radial-gradient(circle at 50% 30%, #1a0414 0%, #0a0108 55%, #050004 100%);
-  background-attachment: fixed;
   color: #f1f5f9;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+/* ==============================================================
+   DESKTOP / LANDSCAPE VIEW:
+   Centered in the middle, cannot crop, luxury dark theme
+   ============================================================== */
+@media (min-width: 769px) and (orientation: landscape) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 30%, #1a0414 0%, #0a0108 55%, #050004 100%);
+    background-attachment: fixed;
+    padding: 20px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .poster-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .poster-img {
+    max-height: 94vh;
+    max-height: 94dvh;
+    width: auto;
+    max-width: 90vw;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.15);
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ==============================================================
+   MOBILE & TABLET / PORTRAIT VIEW:
+   Full screen edge-to-edge, zero side padding, zero crop
+   ============================================================== */
+@media (max-width: 768px), (orientation: portrait) {
+  html, body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #080107 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .poster-container {
+    width: 100% !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .poster-img {
+    width: 100% !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    image-rendering: -webkit-optimize-contrast;
+  }
 }
