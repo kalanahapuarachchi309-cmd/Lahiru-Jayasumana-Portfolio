@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import "./globals.css";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  openGraph: {
+    title: "Lahiru Jayasumana (MBA) | Candidate for College OBU Vice President",
+    description:
+      "Holy Cross College Kalutara • 25 Years of Local & International Experience • College Head Prefect 2000–2001",
+    images: ["/hcc-campaign-poster.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +30,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark bg-[#080107]">
+    <html lang="en" className="dark" style={{ backgroundColor: "#080107", width: "100%", height: "100%" }}>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="min-h-screen bg-[#080107] text-slate-100 m-0 p-0 overflow-x-hidden antialiased">
+      <body
+        style={{
+          margin: 0,
+          padding: 0,
+          width: "100%",
+          height: "100%",
+          minHeight: "100dvh",
+          backgroundColor: "#080107",
+          background: "radial-gradient(circle at 50% 30%, #1a0414 0%, #0a0108 55%, #050004 100%)",
+          backgroundAttachment: "fixed",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        className="w-full h-full min-h-screen min-h-[100dvh] bg-[#080107] text-slate-100 m-0 p-0 overflow-hidden antialiased flex items-center justify-center"
+      >
         {children}
       </body>
     </html>
