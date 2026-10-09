@@ -10,16 +10,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Lahiru Jayasumana (MBA) | Candidate for College OBU Vice President",
-  description:
-    "Candidate for College OBU Vice President, Holy Cross College Kalutara. HCC 1998–2001 Batch. College Head Prefect 2000–2001. 25 Years of Local & International Experience.",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Lahiru Jayasumana (MBA) | Candidate for College OBU Vice President",
-    description:
-      "Holy Cross College Kalutara • 25 Years of Local & International Experience • College Head Prefect 2000–2001",
     images: ["/hcc-campaign-poster.jpg"],
   },
 };
