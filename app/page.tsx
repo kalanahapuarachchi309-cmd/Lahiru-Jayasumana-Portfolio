@@ -45,19 +45,20 @@ export default function Home() {
                 className="w-full h-full object-cover object-[50%_15%]"
               />
             </div>
-            <div className="min-w-0 max-w-[190px] xs:max-w-[240px] sm:max-w-none">
+            <div className="min-w-0 flex-1">
+              {/* Candidate Name & MBA - Full display without truncation */}
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="font-black text-sm sm:text-base lg:text-lg tracking-wide text-white uppercase group-hover:text-[#ffd700] transition-colors truncate">
+                <span className="font-black text-xs xs:text-sm sm:text-base lg:text-lg tracking-wide text-white uppercase group-hover:text-[#ffd700] transition-colors whitespace-nowrap">
                   Lahiru Jayasumana
                 </span>
-                <span className="px-1.5 py-0.5 rounded text-[10px] sm:text-[11px] font-black bg-gradient-to-r from-[#d4af37] to-[#e5c158] text-slate-950 uppercase shadow-sm flex-shrink-0">
+                <span className="px-1.5 py-0.5 rounded text-[9px] xs:text-[10px] sm:text-[11px] font-black bg-gradient-to-r from-[#d4af37] to-[#e5c158] text-slate-950 uppercase shadow-sm flex-shrink-0">
                   MBA
                 </span>
               </div>
               
-              {/* Mobile: Ticker marquee animation so full title is visible without truncation */}
-              <div className="block sm:hidden overflow-hidden w-full relative">
-                <div className="animate-marquee text-[10px] text-[#ffd700] font-bold tracking-wider uppercase">
+              {/* Mobile: Ticker marquee animation so full designation continuously moves left-to-right/across smoothly */}
+              <div className="block sm:hidden overflow-hidden max-w-[170px] xs:max-w-[210px] relative">
+                <div className="animate-marquee text-[9px] xs:text-[10px] text-[#ffd700] font-bold tracking-wider uppercase">
                   <span>Senior Management • OBU Vice President Candidate&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
                   <span>Senior Management • OBU Vice President Candidate&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
                 </div>
@@ -97,10 +98,10 @@ export default function Home() {
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-lg bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#e5c158] hover:brightness-110 text-slate-950 font-black text-[11px] sm:text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#d4af37]/25 transform hover:-translate-y-0.5"
+              aria-label="LinkedIn Profile"
+              className="inline-flex items-center gap-1.5 px-2.5 py-2 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 rounded-lg bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#e5c158] hover:brightness-110 text-slate-950 font-black text-[11px] sm:text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#d4af37]/25 transform hover:-translate-y-0.5"
             >
-              <span>LinkedIn</span>
-              <span className="hidden sm:inline">Profile</span>
+              <span className="hidden xs:inline">LinkedIn</span>
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
