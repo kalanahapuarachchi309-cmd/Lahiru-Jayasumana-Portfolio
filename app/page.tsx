@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import "@/lib/firebase";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"operations" | "automotive" | "governance">("operations");
