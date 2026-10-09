@@ -73,6 +73,19 @@ export default function RootLayout({
           .animate-pulse-glow {
             animation: pulseGlow 4s ease-in-out infinite;
           }
+
+          @keyframes marqueeScroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: marqueeScroll 12s linear infinite;
+          }
+          .animate-marquee:hover {
+            animation-play-state: paused;
+          }
         `}} />
       </head>
       <body className="min-h-screen bg-[#12030d] text-slate-100 selection:bg-[#d4af37]/30 selection:text-[#ffd700]">

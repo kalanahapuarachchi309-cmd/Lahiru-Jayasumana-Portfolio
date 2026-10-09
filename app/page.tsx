@@ -46,7 +46,7 @@ export default function Home() {
                 className="w-full h-full object-cover object-[50%_15%]"
               />
             </div>
-            <div className="min-w-0">
+            <div className="min-w-0 max-w-[190px] xs:max-w-[240px] sm:max-w-none">
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <span className="font-black text-sm sm:text-base lg:text-lg tracking-wide text-white uppercase group-hover:text-[#ffd700] transition-colors truncate">
                   Lahiru Jayasumana
@@ -55,8 +55,18 @@ export default function Home() {
                   MBA
                 </span>
               </div>
-              <span className="text-[10px] sm:text-[11px] text-[#e5c158] font-bold tracking-wider uppercase block truncate">
-                Senior Management • OBU VP Candidate
+              
+              {/* Mobile: Ticker marquee animation so full title is visible without truncation */}
+              <div className="block sm:hidden overflow-hidden w-full relative">
+                <div className="animate-marquee text-[10px] text-[#ffd700] font-bold tracking-wider uppercase">
+                  <span>Senior Management • OBU Vice President Candidate&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+                  <span>Senior Management • OBU Vice President Candidate&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+                </div>
+              </div>
+
+              {/* Desktop & Tablet: Static clean text */}
+              <span className="hidden sm:block text-[11px] text-[#e5c158] font-bold tracking-wider uppercase">
+                Senior Management • OBU Vice President Candidate
               </span>
             </div>
           </a>
