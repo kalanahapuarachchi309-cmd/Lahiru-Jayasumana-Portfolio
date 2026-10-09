@@ -38,103 +38,271 @@
       margin: 0;
       padding: 0;
       background-color: #080107;
-      background: radial-gradient(circle at 50% 40%, #1c0316 0%, #0c010a 55%, #050004 100%);
+      background: radial-gradient(circle at 50% 15%, #420334 0%, #1e0117 38%, #0a0008 80%, #050004 100%);
       background-attachment: fixed;
       color: #f1f5f9;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       overflow: hidden;
       -webkit-font-smoothing: antialiased;
+    }
+
+    .main-layout {
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      max-width: 100vw;
+      max-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Top Banner Area */
+    .mobile-top-bar {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 10px 16px 4px;
+      padding-top: max(8px, env(safe-area-inset-top));
+      flex-shrink: 0;
+      z-index: 10;
     }
 
-    /* ==============================================================
-       DESKTOP / LANDSCAPE VIEW:
-       Centered in the middle, cannot crop, luxury dark theme with card frame
-       ============================================================== */
+    .top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: rgba(55, 3, 42, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 9999px;
+      color: #f7e6b5;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(212, 175, 55, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .badge-icon {
+      font-size: 10px;
+    }
+
+    /* Poster Wrapper */
+    .poster-wrapper {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 8px;
+      box-sizing: border-box;
+    }
+
+    .poster-img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 175, 55, 0.15);
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* Bottom Action Area */
+    .mobile-bottom-bar {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 16px 12px;
+      padding-bottom: max(10px, env(safe-area-inset-bottom));
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .btn-share {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 18px;
+      background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+      color: #1a0414;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 9999px;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn-share:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-share:active {
+      transform: scale(0.97);
+    }
+
+    .btn-linkedin {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 18px;
+      background: rgba(45, 3, 35, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 9999px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.15s ease, background 0.15s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .btn-linkedin:hover {
+      background: rgba(65, 5, 50, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .btn-linkedin:active {
+      transform: scale(0.97);
+    }
+
+    .batch-tagline {
+      color: rgba(243, 229, 171, 0.7);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    /* Desktop Landscape */
     @media (min-width: 769px) and (orientation: landscape) {
-      body {
-        padding: 20px;
+      .main-layout {
+        padding: 16px;
       }
-
-      .poster-container {
-        width: 100%;
-        max-width: 100%;
-        height: 100%;
-        max-height: 100dvh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
+      .poster-wrapper {
+        padding: 10px;
       }
-
       .poster-img {
-        max-height: 94vh;
-        max-height: 94dvh;
-        width: auto;
+        max-height: 85vh;
+        max-height: 85dvh;
         max-width: 90vw;
-        object-fit: contain;
-        object-position: center;
-        display: block;
-        margin: auto;
         border-radius: 12px;
-        box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.15);
-        image-rendering: -webkit-optimize-contrast;
+        box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.95), 0 0 40px rgba(212, 175, 55, 0.15);
       }
-    }
-
-    /* ==============================================================
-       MOBILE & TABLET / PORTRAIT VIEW:
-       Maximized fit to screen WITHOUT CROPPING ANY DETAILS
-       ============================================================== */
-    @media (max-width: 768px), (orientation: portrait) {
-      body {
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .poster-container {
-        width: 100vw !important;
-        height: 100vh !important;
-        height: 100dvh !important;
-        max-width: 100vw !important;
-        max-height: 100dvh !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: hidden !important;
-        box-sizing: border-box !important;
-      }
-
-      .poster-img {
-        width: 100% !important;
-        height: 100% !important;
-        max-width: 100vw !important;
-        max-height: 100dvh !important;
-        object-fit: contain !important;
-        object-position: center !important;
-        display: block !important;
-        margin: auto !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        image-rendering: -webkit-optimize-contrast;
+      .action-buttons {
+        max-width: 400px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="poster-container">
-    <img
-      id="campaign-img"
-      src="/hcc-campaign-poster.jpg"
-      alt="Holy Cross College Kalutara - Lahiru Jayasumana (MBA) - Candidate for College OBU Vice President"
-      class="poster-img"
-      fetchpriority="high"
-      loading="eager"
-    />
+  <main class="main-layout">
+    <!-- Top Banner Area (Fills space above poster on mobile) -->
+    <header class="mobile-top-bar">
+      <div class="top-badge">
+        <span class="badge-icon">⚜️</span>
+        <span>Holy Cross College Kalutara • OBU 2026</span>
+        <span class="badge-icon">⚜️</span>
+      </div>
+    </header>
+
+    <!-- Main Poster Display (Centered & 100% uncropped) -->
+    <section class="poster-wrapper">
+      <img
+        id="campaign-img"
+        src="/hcc-campaign-poster.jpg"
+        alt="Holy Cross College Kalutara - Lahiru Jayasumana (MBA) - Candidate for College OBU Vice President"
+        class="poster-img"
+        fetchpriority="high"
+        loading="eager"
+      />
+    </section>
+
+    <!-- Bottom Action Area (Fills space below poster on mobile) -->
+    <footer class="mobile-bottom-bar">
+      <div class="action-buttons">
+        <a
+          id="share-btn"
+          href="https://api.whatsapp.com/send?text=Support%20Lahiru%20Jayasumana%20(MBA)%20for%20Holy%20Cross%20College%20Kalutara%20OBU%20Vice%20President!%20View%20campaign%20poster:%20https://lahiru-jayasumana-portfolio.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-share"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+          </svg>
+          <span>Share Flyer</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/lahiru-jayasumana-6b9245157/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-linkedin"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+      <p class="batch-tagline">
+        HCC 1998–2001 Batch • College Head Prefect 2000–2001
+      </p>
+    </footer>
   </main>
+
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+      shareBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navigator.share({
+          title: 'Lahiru Jayasumana (MBA) - Holy Cross College OBU Vice President',
+          text: 'Support Lahiru Jayasumana (MBA) for College OBU Vice President, Holy Cross College Kalutara.',
+          url: window.location.href
+        }).catch(() => {});
+      });
+    }
+  </script>
 </body>
 </html>
