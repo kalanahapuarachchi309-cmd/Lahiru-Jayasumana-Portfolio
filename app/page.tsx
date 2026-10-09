@@ -56,9 +56,9 @@ export default function Home() {
                 </span>
               </div>
               
-              {/* Mobile: Ticker marquee animation so full designation continuously moves left-to-right/across smoothly */}
-              <div className="block sm:hidden overflow-hidden max-w-[170px] xs:max-w-[210px] relative">
-                <div className="animate-marquee text-[9px] xs:text-[10px] text-[#ffd700] font-bold tracking-wider uppercase">
+              {/* Mobile: Ticker marquee animation across the full available header width */}
+              <div className="block sm:hidden overflow-hidden w-full relative">
+                <div className="animate-marquee text-[10px] text-[#ffd700] font-bold tracking-wider uppercase">
                   <span>Senior Management • OBU Vice President Candidate&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
                   <span>Senior Management • OBU Vice President Candidate&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
                 </div>
@@ -82,11 +82,11 @@ export default function Home() {
             <a href="#contact" className="hover:text-[#ffd700] transition-colors">Contact</a>
           </nav>
 
-          {/* Action CTAs */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          {/* Action CTAs (Desktop & Tablet only - Clean on Mobile) */}
+          <div className="hidden sm:flex items-center gap-3 flex-shrink-0">
             <button
               onClick={handleCopyLink}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#200516] border border-[#d4af37]/40 text-[#f3e5ab] text-xs font-bold hover:border-[#ffd700] transition-all shadow"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#200516] border border-[#d4af37]/40 text-[#f3e5ab] text-xs font-bold hover:border-[#ffd700] transition-all shadow"
             >
               <svg className="w-3.5 h-3.5 text-[#ffd700]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -99,9 +99,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="inline-flex items-center gap-1.5 px-2.5 py-2 xs:px-3.5 xs:py-2 sm:px-5 sm:py-2.5 rounded-lg bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#e5c158] hover:brightness-110 text-slate-950 font-black text-[11px] sm:text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#d4af37]/25 transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#e5c158] hover:brightness-110 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#d4af37]/25 transform hover:-translate-y-0.5"
             >
-              <span className="hidden xs:inline">LinkedIn</span>
+              <span>LinkedIn Profile</span>
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
