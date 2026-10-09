@@ -31,7 +31,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth antialiased dark">
-      <body className="min-h-screen bg-[#0a0f1d] text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-200">
+      <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+        <style dangerouslySetInnerHTML={{ __html: `
+          body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+          svg { max-width: 100%; }
+        `}} />
+      </head>
+      <body className="min-h-screen bg-[#070b14] text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-200">
         {children}
       </body>
     </html>
