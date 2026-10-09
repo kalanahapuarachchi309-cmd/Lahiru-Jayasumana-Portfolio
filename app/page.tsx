@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen min-h-[100dvh] flex flex-col items-center justify-start md:justify-center p-0 md:p-5 bg-[#080107] bg-[radial-gradient(circle_at_50%_30%,#1a0414_0%,#0a0108_55%,#050004_100%)]">
-      <div className="w-full max-w-full md:max-w-none flex items-center justify-center p-0">
+    <main className="w-full h-full min-h-screen min-h-[100dvh] flex flex-col items-center justify-center p-0 landscape:p-5 bg-[#080107] bg-[radial-gradient(circle_at_50%_30%,#1a0414_0%,#0a0108_55%,#050004_100%)]">
+      <div className="w-screen h-[100dvh] landscape:w-full landscape:h-auto flex items-center justify-center p-0 m-0">
         <img
           src="/hcc-campaign-poster.jpg"
           alt="Holy Cross College Kalutara - Lahiru Jayasumana (MBA) - Candidate for College OBU Vice President"
-          className="w-full md:w-auto h-auto md:max-h-[94vh] md:max-h-[94dvh] md:max-w-[90vw] block md:rounded-xl shadow-none md:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.9),0_0_40px_rgba(212,175,55,0.12)] [image-rendering:-webkit-optimize-contrast]"
+          className="w-full h-full landscape:w-auto landscape:h-auto max-w-[100vw] max-h-[100dvh] landscape:max-h-[94vh] landscape:max-h-[94dvh] landscape:max-w-[90vw] object-contain object-center block landscape:rounded-xl shadow-none landscape:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.9),0_0_40px_rgba(212,175,55,0.12)] [image-rendering:-webkit-optimize-contrast]"
           fetchPriority="high"
         />
       </div>
