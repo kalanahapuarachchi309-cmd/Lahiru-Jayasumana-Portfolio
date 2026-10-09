@@ -6,7 +6,7 @@ export const viewport: Viewport = {
   initialScale: 1.0,
   maximumScale: 5.0,
   viewportFit: "cover",
-  themeColor: "#080107",
+  themeColor: "#3b022d",
 };
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark bg-[#080107]">
+    <html lang="en" className="dark bg-[#3b022d]">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
