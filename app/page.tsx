@@ -357,12 +357,12 @@ export default function Home() {
             <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#ffd700] to-transparent mx-auto mt-3"></div>
           </div>
 
-          {/* Interactive Navigation Pills */}
-          <div className="flex justify-center mb-10">
-            <div className="inline-flex p-1.5 rounded-2xl bg-[#200516] border border-[#d4af37]/35 shadow-xl">
+          {/* Interactive Navigation Pills - Fully Responsive & Scrollable on Mobile */}
+          <div className="flex justify-start sm:justify-center mb-10 overflow-x-auto pb-2 scrollbar-none px-2 -mx-2 sm:mx-0">
+            <div className="inline-flex p-1 sm:p-1.5 rounded-2xl bg-[#200516] border border-[#d4af37]/35 shadow-xl flex-nowrap shrink-0 mx-auto">
               <button
                 onClick={() => setActiveTab("candidacy")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all ${
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap ${
                   activeTab === "candidacy"
                     ? "bg-gradient-to-r from-[#d4af37] to-[#e5c158] text-slate-950 shadow-md"
                     : "text-slate-300 hover:text-white"
@@ -372,7 +372,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => setActiveTab("experience")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all ${
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap ${
                   activeTab === "experience"
                     ? "bg-gradient-to-r from-[#d4af37] to-[#e5c158] text-slate-950 shadow-md"
                     : "text-slate-300 hover:text-white"
@@ -382,7 +382,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => setActiveTab("domains")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all ${
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap ${
                   activeTab === "domains"
                     ? "bg-gradient-to-r from-[#d4af37] to-[#e5c158] text-slate-950 shadow-md"
                     : "text-slate-300 hover:text-white"
@@ -392,7 +392,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => setActiveTab("leadership")}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all ${
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black transition-all whitespace-nowrap ${
                   activeTab === "leadership"
                     ? "bg-gradient-to-r from-[#d4af37] to-[#e5c158] text-slate-950 shadow-md"
                     : "text-slate-300 hover:text-white"
