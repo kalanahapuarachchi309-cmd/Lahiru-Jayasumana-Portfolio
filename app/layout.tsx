@@ -1,27 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 5.0,
+  viewportFit: "cover",
+  themeColor: "#080107",
+};
 
 export const metadata: Metadata = {
-  title: "Lahiru Jayasumana (MBA) | Senior Management & OBU Vice President Candidate",
+  title: "Lahiru Jayasumana (MBA) | Candidate for College OBU Vice President",
   description:
-    "Executive Profile of Lahiru Jayasumana (MBA) - Candidate for College OBU Vice President at Holy Cross College Kalutara, General Manager (Madagascar Operations) at Sadaharitha Plantations Limited, former Divisional Manager at David Pieris Motor Company, Member of Asia CEO Community.",
-  keywords: [
-    "Lahiru Jayasumana",
-    "Holy Cross College Kalutara",
-    "HCC OBU Vice President",
-    "College Head Prefect",
-    "Sadaharitha Plantations",
-    "David Pieris Motor Company",
-    "Asia CEO Community",
-    "General Manager Madagascar",
-  ],
-  authors: [{ name: "Lahiru Jayasumana" }],
-  openGraph: {
-    title: "Lahiru Jayasumana (MBA) | Senior Management & OBU Vice President Candidate",
-    description:
-      "25 Years of Local & International Experience. Candidate for College OBU Vice President, Holy Cross College Kalutara.",
-    type: "website",
-    url: "https://www.linkedin.com/in/lahiru-jayasumana-6b9245157/",
+    "Candidate for College OBU Vice President, Holy Cross College Kalutara. HCC 1998–2001 Batch. College Head Prefect 2000–2001. 25 Years of Local & International Experience.",
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
@@ -31,64 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth antialiased dark">
+    <html lang="en" className="dark bg-[#080107]">
       <head>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
-          rel="stylesheet"
-        />
-        <style dangerouslySetInnerHTML={{ __html: `
-          body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
-          .font-serif-title { font-family: 'Playfair Display', Georgia, serif; }
-          svg { max-width: 100%; }
-          
-          @keyframes floatGentle {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-          }
-          .animate-float-gentle {
-            animation: floatGentle 5s ease-in-out infinite;
-          }
-
-          @keyframes goldShimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-          }
-          .gold-shimmer-text {
-            background: linear-gradient(90deg, #d4af37 0%, #fff2b2 50%, #d4af37 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: goldShimmer 6s linear infinite;
-          }
-
-          @keyframes pulseGlow {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.75; transform: scale(1.04); }
-          }
-          .animate-pulse-glow {
-            animation: pulseGlow 4s ease-in-out infinite;
-          }
-
-          @keyframes marqueeScroll {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-marquee {
-            display: inline-flex;
-            white-space: nowrap;
-            animation: marqueeScroll 12s linear infinite;
-          }
-          .animate-marquee:hover {
-            animation-play-state: paused;
-          }
-        `}} />
+        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="min-h-screen bg-[#12030d] text-slate-100 selection:bg-[#d4af37]/30 selection:text-[#ffd700]">
+      <body className="min-h-screen bg-[#080107] text-slate-100 m-0 p-0 overflow-x-hidden antialiased">
         {children}
       </body>
     </html>

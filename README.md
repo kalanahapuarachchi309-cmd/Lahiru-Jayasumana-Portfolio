@@ -1,16 +1,14 @@
-# Lahiru Jayasumana - Executive Profile & Portfolio
+# Lahiru Jayasumana (MBA) - Holy Cross College OBU Vice President Candidate
 
-Executive profile website for **Lahiru Jayasumana**, General Manager – Madagascar Operations at Sadaharitha Plantations Limited and member of the Asia CEO Community.
+Official campaign profile for **Lahiru Jayasumana (MBA)**, Candidate for College OBU Vice President, Holy Cross College Kalutara.
 
+- **Alma Mater**: Holy Cross College Kalutara (HCC 1998–2001 Batch)
+- **Leadership**: College Head Prefect (2000–2001)
+- **Experience**: 25 Years of Local & International Senior Management Experience
+- **Live URL**: [https://rumex-490507.web.app](https://rumex-490507.web.app)
 - **LinkedIn**: [https://www.linkedin.com/in/lahiru-jayasumana-6b9245157/](https://www.linkedin.com/in/lahiru-jayasumana-6b9245157/)
-- **Tech Stack**: Next.js 16 (App Router), React 19, Tailwind CSS, TypeScript.
 
-## Getting Started
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+- **Desktop**: Centered high-resolution campaign poster display with luxury dark background.
+- **Mobile & Tablet**: Full-screen edge-to-edge responsive display for all portrait mobile and tablet devices.
+- **Hosting**: Firebase Hosting (`rumex-490507.web.app`).
