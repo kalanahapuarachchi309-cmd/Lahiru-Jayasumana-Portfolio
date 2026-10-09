@@ -5,7 +5,6 @@ import "@/lib/firebase";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"candidacy" | "experience" | "domains" | "leadership">("candidacy");
-  const [showPosterModal, setShowPosterModal] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", batch: "", message: "" });
@@ -129,27 +128,13 @@ export default function Home() {
                 
                 <div className="relative rounded-2xl bg-[#200516] border-2 border-[#d4af37] p-2.5 shadow-2xl overflow-hidden transition-all duration-300 hover:border-[#ffd700]">
                   
-                  {/* Poster Image Container */}
-                  <div
-                    onClick={() => setShowPosterModal(true)}
-                    className="relative rounded-xl overflow-hidden shadow-inner aspect-[7/10] w-full cursor-pointer group"
-                  >
+                  {/* Poster Image Container - Clean, Native Display Without Expand Popups */}
+                  <div className="relative rounded-xl overflow-hidden shadow-inner w-full bg-[#11030c]">
                     <img
                       src="/hcc-campaign-poster.jpg"
                       alt="Holy Cross College Kalutara - Lahiru Jayasumana OBU Vice President Candidacy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-auto object-contain block rounded-lg"
                     />
-                    
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-[#11030c]/55 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center backdrop-blur-[2px]">
-                      <div className="w-14 h-14 rounded-full bg-[#d4af37] text-slate-950 flex items-center justify-center mb-3 shadow-xl shadow-[#d4af37]/40 transform group-hover:scale-110 transition-transform">
-                        <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
-                      </div>
-                      <span className="text-white font-black text-sm uppercase tracking-wider">Click to Expand Poster</span>
-                      <span className="text-[#ffd700] text-xs font-semibold mt-1">High-Resolution Campaign Card</span>
-                    </div>
                   </div>
 
                   {/* Clean Credentials Footer Bar */}
@@ -160,16 +145,9 @@ export default function Home() {
                         <span>Candidate for OBU Vice President</span>
                       </div>
                     </div>
-
-                    <button
-                      onClick={() => setShowPosterModal(true)}
-                      className="px-3 py-1.5 rounded-lg bg-[#2f071f] hover:bg-[#450b2e] border border-[#d4af37]/60 text-[#f3e5ab] text-xs font-black uppercase tracking-wider transition-colors flex items-center gap-1"
-                    >
-                      <span>Expand</span>
-                      <svg className="w-3.5 h-3.5 text-[#ffd700]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                      </svg>
-                    </button>
+                    <span className="px-3 py-1 rounded-full bg-[#2f071f] border border-[#d4af37]/50 text-[#ffd700] text-[11px] font-black uppercase tracking-wider">
+                      Holy Cross
+                    </span>
                   </div>
 
                 </div>
@@ -236,16 +214,15 @@ export default function Home() {
 
               {/* Action Buttons - Centered and full-width on mobile */}
               <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-3">
-                <button
-                  onClick={() => setShowPosterModal(true)}
+                <a
+                  href="#campaign"
                   className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#e5c158] hover:brightness-110 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-[#d4af37]/30 inline-flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                 >
                   <svg className="w-4 h-4 text-slate-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
-                  <span>View Official Campaign Card</span>
-                </button>
+                  <span>Explore Leadership Profile</span>
+                </a>
 
                 <a
                   href="#experience"
@@ -406,18 +383,10 @@ export default function Home() {
           {/* Tab Content 1: OBU Candidacy */}
           {activeTab === "candidacy" && (
             <div className="p-8 rounded-2xl bg-[#200516] border-2 border-[#d4af37]/50 shadow-2xl space-y-6 max-w-4xl mx-auto">
-              <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
-                <div>
-                  <span className="text-xs font-bold text-[#ffd700] uppercase tracking-widest block">Alma Mater Election</span>
-                  <h3 className="text-2xl font-black text-white uppercase">Holy Cross College Kalutara OBU Vice President</h3>
-                  <p className="text-sm text-slate-300 mt-1">HCC | 1998–2001 Batch • College Head Prefect 2000–2001</p>
-                </div>
-                <button
-                  onClick={() => setShowPosterModal(true)}
-                  className="px-4 py-2 rounded-lg bg-[#32071f] hover:bg-[#4a0b2d] border border-[#d4af37] text-[#ffd700] text-xs font-black uppercase tracking-wider transition-colors"
-                >
-                  View Full Poster
-                </button>
+              <div className="pb-4 border-b border-slate-800">
+                <span className="text-xs font-bold text-[#ffd700] uppercase tracking-widest block">Alma Mater Election</span>
+                <h3 className="text-2xl font-black text-white uppercase">Holy Cross College Kalutara OBU Vice President</h3>
+                <p className="text-sm text-slate-300 mt-1">HCC | 1998–2001 Batch • College Head Prefect 2000–2001</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -709,44 +678,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Campaign Poster Modal Dialog (Lightbox) */}
-      {showPosterModal && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onClick={() => setShowPosterModal(false)}>
-          <div className="relative max-w-xl w-full bg-[#1b0514] rounded-3xl border-2 border-[#d4af37] p-5 shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between pb-3 border-b border-[#d4af37]/30 mb-3">
-              <div>
-                <h4 className="font-black text-white text-base uppercase">Holy Cross College Kalutara</h4>
-                <p className="text-xs text-[#ffd700] font-bold">Candidate for College OBU Vice President</p>
-              </div>
-              <button
-                onClick={() => setShowPosterModal(false)}
-                className="w-8 h-8 rounded-full bg-[#32071f] text-white hover:bg-[#d4af37] hover:text-slate-950 font-black text-sm flex items-center justify-center transition-colors"
-              >
-                ✕
-              </button>
-            </div>
-            
-            <div className="rounded-xl overflow-hidden border border-[#d4af37]/40 max-h-[75vh] overflow-y-auto">
-              <img
-                src="/hcc-campaign-poster.jpg"
-                alt="Holy Cross College Kalutara OBU Vice President Campaign Poster"
-                className="w-full h-auto object-contain"
-              />
-            </div>
-
-            <div className="pt-3.5 flex items-center justify-between gap-3 text-xs">
-              <span className="text-[#f3e5ab] font-bold italic">&ldquo;Your Support. Our Alma Mater. A Stronger Future.&rdquo;</span>
-              <button
-                onClick={() => setShowPosterModal(false)}
-                className="px-4 py-2 rounded-lg bg-[#d4af37] text-slate-950 font-black uppercase text-xs hover:bg-[#ffd700] transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
     </div>
   );
